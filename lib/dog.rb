@@ -15,7 +15,7 @@ class Dog
     sql=<<-SQL
     DROP TABLE dogs
     SQL
-    DB.execute(sql)
+    DB[:conn].execute(sql)
   end
 
   def save
