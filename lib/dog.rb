@@ -49,7 +49,12 @@ class Dog
     WHERE id = ?
     SQL
 
-    DB[:conn].execute(sql, array[0])
+    dog = DB[:conn].execute(sql, array[0])
+    if !dog.empty?
+      dog
+    else
+      Dog.new_from_db(array)
+    end
   end
 
   def self.find_or_create_by
