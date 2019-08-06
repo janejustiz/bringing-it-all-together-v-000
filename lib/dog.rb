@@ -50,11 +50,7 @@ class Dog
     SQL
 
     dog = DB[:conn].execute(sql, id)
-    if !dog.empty?
-      dog
-    else
-      Dog.new_from_db(array)
-    end
+    dog
   end
 
   def self.find_or_create_by
