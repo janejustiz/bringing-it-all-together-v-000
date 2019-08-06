@@ -67,7 +67,7 @@ class Dog
     if !dog.empty?
       new_dog = Dog.new_from_db(dog[0])
     else
-      new_dog = Dog.create(id: dog[0][0], name: dog[0][1], breed: dog[0][2])
+      new_dog = Dog.create(name: dog[:name], breed: dog[:breed])
     end
     new_dog
   end
