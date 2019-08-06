@@ -65,10 +65,11 @@ class Dog
     dog = DB[:conn].execute(sql, dog[:name], dog[:breed])[0]
 
     if !dog.empty?
-      Dog.new_from_db(dog)
+      new_dog = Dog.new_from_db(dog)
     else
-      Dog.create(id: dog[0], name: dog[1], breed: dog[2])
+      new_dog = Dog.create(id: dog[0], name: dog[1], breed: dog[2])
     end
+    new_dog
   end
 
   def self.find_by_name(name)
