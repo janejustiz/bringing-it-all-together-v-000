@@ -12,7 +12,7 @@ class Dog
     CREATE TABLE dogs(
       id INTEGER PRIMARY KEY,
       name TEXT
-    )
+      )
     SQL
     DB[:conn].execute(sql)
   end
@@ -25,6 +25,11 @@ class Dog
   end
 
   def save
+    sql=<<-SQL
+      INSERT INTO dogs (name, breed) VALUES (?, ?)
+    SQL
+    DB[:conn].execute(sql, self.name, self.breed)
+    self
   end
 
   def self.create
