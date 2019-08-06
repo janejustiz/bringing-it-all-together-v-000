@@ -50,7 +50,7 @@ class Dog
     SQL
 
     dog = DB[:conn].execute(sql, id)
-    dog
+    dog[0]
   end
 
   def self.find_or_create_by
