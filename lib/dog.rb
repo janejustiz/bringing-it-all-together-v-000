@@ -40,7 +40,7 @@ class Dog
   end
 
   def self.create(name:, breed:)
-    dog=Dog.new(name: name, breed: breed)
+    dog = Dog.new(name: name, breed: breed)
     dog.save
   end
 
@@ -60,7 +60,7 @@ class Dog
   end
 
   def self.find_or_create_by(dog)
-    sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
+    sql = "SELECT * FROM dogs WHERE name = ? AND breed = ? LIMIT 1"
 
     dog = DB[:conn].execute(sql, dog[:name], dog[:breed])
 
