@@ -61,7 +61,7 @@ class Dog
     if dog
       Dog.new_from_db(dog[0])
     else
-      self.create(id: dog[0], name: dog[1], breed: dog[2])
+      self.create(id: dog[0][0], name: dog[0][1], breed: dog[0][2])
     end
   end
 
