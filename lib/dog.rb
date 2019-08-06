@@ -60,7 +60,7 @@ class Dog
     WHERE name = ?, breed = ?
     SQL
 
-    dog = DB[:conn].execute(sql, dog[:name], :breed)
+    dog = DB[:conn].execute(sql, dog[:name], dog[:breed])
 
     if !dog.empty?
       dog
