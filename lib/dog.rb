@@ -65,7 +65,7 @@ class Dog
     info = DB[:conn].execute(sql, dog[:name], dog[:breed])
 
     if !info.empty?
-      new_dog = Dog.new_from_db(dog[0])
+      new_dog = Dog.new_from_db(info[0])
     else
       new_dog = Dog.create(name: dog[:name], breed: dog[:breed])
     end
