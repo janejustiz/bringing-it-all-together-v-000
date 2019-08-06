@@ -53,7 +53,8 @@ class Dog
     Dog.new_from_db(dog[0])
   end
 
-  def self.find_or_create_by
+  def self.find_or_create_by(array)
+
   end
 
   def self.find_by_name
